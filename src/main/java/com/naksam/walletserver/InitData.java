@@ -33,11 +33,11 @@ public class InitData {
 
         @Transactional
         public void init() {
+
             Wallet wallet1 = Wallet
                     .builder()
                     .amount(Money.wons(1_000_000))
                     .build();
-            em.persist(wallet1);
 
             User user1 = User.builder()
                     .name("박준형")
@@ -50,7 +50,6 @@ public class InitData {
                     .builder()
                     .amount(Money.wons(1_000_000))
                     .build();
-            em.persist(wallet2);
 
             User user2 = User.builder()
                     .name("강민형")
@@ -63,7 +62,6 @@ public class InitData {
                     .builder()
                     .amount(Money.wons(1_000_000))
                     .build();
-            em.persist(wallet3);
 
             User user3 = User.builder()
                     .name("김형준")
@@ -76,7 +74,6 @@ public class InitData {
                     .builder()
                     .amount(Money.wons(1_000_000))
                     .build();
-            em.persist(wallet4);
 
             User user4 = User.builder()
                     .name("박용수")
@@ -89,7 +86,6 @@ public class InitData {
                     .builder()
                     .amount(Money.wons(1_000_000))
                     .build();
-            em.persist(wallet5);
 
             User user5 = User.builder()
                     .name("이서라")
@@ -102,7 +98,6 @@ public class InitData {
                     .builder()
                     .amount(Money.wons(1_000_000))
                     .build();
-            em.persist(wallet6);
 
             User user6 = User.builder()
                     .name("정다솜")
@@ -115,7 +110,6 @@ public class InitData {
                     .builder()
                     .amount(Money.wons(1_000_000))
                     .build();
-            em.persist(wallet7);
 
             Club club = Club.builder()
                     .name(new ClubName("KB 축구모임"))
@@ -134,7 +128,6 @@ public class InitData {
                     .builder()
                     .amount(Money.wons(1_000_000))
                     .build();
-            em.persist(wallet8);
 
             Club club1 = Club.builder()
                     .name(new ClubName("KB 맛집탐방"))
@@ -153,7 +146,6 @@ public class InitData {
                     .builder()
                     .amount(Money.wons(1_000_000))
                     .build();
-            em.persist(wallet9);
 
             Club club2 = Club.builder()
                     .name(new ClubName("KB 코딩스터디"))
@@ -172,7 +164,6 @@ public class InitData {
                     .builder()
                     .amount(Money.wons(1_000_000))
                     .build();
-            em.persist(wallet10);
 
             Club club3 = Club.builder()
                     .name(new ClubName("KB 야구단"))
@@ -191,7 +182,6 @@ public class InitData {
                     .builder()
                     .amount(Money.wons(1_000_000))
                     .build();
-            em.persist(wallet11);
 
             User user = User.builder()
                     .name("tester")
@@ -205,7 +195,6 @@ public class InitData {
                     .builder()
                     .amount(Money.wons(1_000_000))
                     .build();
-            em.persist(wallet12);
 
             Club club4 = Club.builder()
                     .name(new ClubName("KB 맛집탐방"))
