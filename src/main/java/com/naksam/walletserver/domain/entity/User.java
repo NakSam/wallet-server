@@ -1,5 +1,6 @@
 package com.naksam.walletserver.domain.entity;
 
+import com.naksam.walletserver.dto.WalletInfo;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.LazyToOne;
@@ -36,5 +37,9 @@ public class User extends BaseTimeEntity {
 
     public boolean memberIsNotEqual(Long ownerId) {
         return !this.id.equals(ownerId);
+    }
+
+    public WalletInfo walletInfo() {
+        return this.wallet.createInfo();
     }
 }
