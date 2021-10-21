@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: wallet
   labels:
-    app: club
+    app: wallet
 spec:
   type: ClusterIP
   ports:

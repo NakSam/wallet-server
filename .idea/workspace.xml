@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="deploy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/Jenkinsfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment/deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/deploy.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment/pipeline.properties" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/pipeline.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment/service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/service.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,8 +85,16 @@
       <workItem from="1634779987674" duration="492000" />
       <workItem from="1634780499681" duration="202000" />
       <workItem from="1634780714636" duration="875000" />
-      <workItem from="1634781611510" duration="790000" />
+      <workItem from="1634781611510" duration="1752000" />
     </task>
+    <task id="LOCAL-00001" summary="deploy">
+      <created>1634789483888</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634789483888</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,5 +111,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="deploy" />
   </component>
 </project>
