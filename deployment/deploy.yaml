@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-club
+spec:
+  selector:
+    matchLabels:
+      app: club
+      ver: v1
+  replicas: 2
+  template:
+    metadata:
+      name: pod-club
+      labels:
+        app: club
+        ver: v1
+    spec:
+      containers:
+        - name: club
+          image: rkdals213/club
+          imagePullPolicy: Always
+          ports:
+            - name: port-club
+              containerPort: 10001
+          resources:
+            requests:
+              cpu: 100m
+              memory: 50Mi
+            limits:
+              cpu: 500m
+              memory: 1024Mi
