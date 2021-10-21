@@ -4,41 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/InitData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/ClubRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/WalletRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/BaseTimeEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/ClubUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Wallet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/objects/ClubName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/objects/MemberNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/objects/Money.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/naksam/walletserver/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/naksam/walletserver/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/naksam/walletserver/config/JpaConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/naksam/walletserver/config/JpaConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/naksam/walletserver/config/SwaggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/naksam/walletserver/config/SwaggerConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/naksam/walletserver/presentation/WalletController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/naksam/walletserver/presentation/WalletController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.naksam.walletserver.ApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.naksam.walletserver.ApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.naksam.walletserver.ApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.naksam.walletserver.ApplicationTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/naksam/walletserver/ApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/naksam/walletserver/ApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wallet-server-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/wallet-server-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="feat: 지갑 조회 기본 기능 구현">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/ClubUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,12 +21,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1znMmm3GruBWEyk4XhTDh3JTuaX" />
@@ -139,8 +112,30 @@
       <workItem from="1634779987674" duration="492000" />
       <workItem from="1634780499681" duration="202000" />
       <workItem from="1634780714636" duration="445000" />
-      <workItem from="1634788951114" duration="5117000" />
+      <workItem from="1634788951114" duration="8459000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: 기본 설정 구현">
+      <created>1634794377702</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634794377702</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: 지갑 조회 기본 기능 구현">
+      <created>1634797356837</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1634797356837</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: 지갑 조회 기본 기능 구현">
+      <created>1634798014109</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634798014109</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,5 +152,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: 기본 설정 구현" />
+    <MESSAGE value="feat: 지갑 조회 기본 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 지갑 조회 기본 기능 구현" />
   </component>
 </project>

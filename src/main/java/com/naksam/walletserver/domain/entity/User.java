@@ -1,9 +1,8 @@
 package com.naksam.walletserver.domain.entity;
 
+import com.naksam.walletserver.dto.WalletInfo;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.LazyToOne;
-import org.hibernate.annotations.LazyToOneOption;
 
 import javax.persistence.*;
 
@@ -22,8 +21,6 @@ public class User extends BaseTimeEntity {
     @Column(name = "email", unique = true)
     private String email;
 
-    @OneToOne
-    @LazyToOne(LazyToOneOption.NO_PROXY)
     private Wallet wallet;
 
     @Builder
@@ -36,5 +33,9 @@ public class User extends BaseTimeEntity {
 
     public boolean memberIsNotEqual(Long ownerId) {
         return !this.id.equals(ownerId);
+    }
+
+    public WalletInfo walletInfo() {
+        return new WalletInfo(createdTime, wallet.amount());
     }
 }

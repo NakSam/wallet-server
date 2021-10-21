@@ -25,8 +25,6 @@ public class Club extends BaseTimeEntity {
     @JoinColumn(name = "club_master_id")
     private User clubMaster;
 
-    @OneToOne
-    @LazyToOne(LazyToOneOption.NO_PROXY)
     private Wallet wallet;
 
     @Builder
