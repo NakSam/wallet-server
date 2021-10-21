@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: club-config
+  name: wallet-config
 data:
   # servlet
-  SERVLET_CONTEXT_PATH: /club
+  SERVLET_CONTEXT_PATH: /wallet
   CLUB_PORT: "8080"
   # DB INFO
   DB_SERVER: mysql.naksam

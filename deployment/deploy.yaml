@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deploy-club
+  name: deploy-wallet
 spec:
   selector:
     matchLabels:
-      app: club
+      app: wallet
       ver: v1
   replicas: 2
   template:
     metadata:
-      name: pod-club
+      name: pod-wallet
       labels:
-        app: club
+        app: wallet
         ver: v1
     spec:
       containers:
-        - name: club
-          image: rkdals213/club
+        - name: wallet
+          image: rkdals213/wallet
           imagePullPolicy: Always
           ports:
-            - name: port-club
+            - name: port-wallet
               containerPort: 10001
           resources:
             requests:

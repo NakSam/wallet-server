@@ -46,7 +46,7 @@ podTemplate(
 			echo "**** START : " + stageName
 			
 			//git "https://github.com/devJacob01/springcloud.git"
-			git branch: 'main', url: 'https://github.com/NakSam/club-server.git'
+			git branch: 'main', url: 'https://github.com/NakSam/wallet-server.git'
 			// git url: "https://github.com/devJacob01/springcloud.git", branch: "master", credentialsId: "auth_gitlab"	
 			
 		}
