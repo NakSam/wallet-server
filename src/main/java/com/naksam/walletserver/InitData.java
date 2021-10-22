@@ -191,6 +191,8 @@ public class InitData {
 
             em.persist(user);
 
+
+
             Wallet wallet12 = Wallet
                     .builder()
                     .amount(Money.wons(1_000_000))
@@ -202,6 +204,12 @@ public class InitData {
                     .wallet(wallet12)
                     .build();
             em.persist(club4);
+
+            ClubUser clubUser4 = ClubUser.builder()
+                    .club(club)
+                    .user(user)
+                    .build();
+            em.persist(clubUser4);
         }
     }
 }

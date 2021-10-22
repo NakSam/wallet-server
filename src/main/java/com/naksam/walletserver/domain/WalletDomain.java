@@ -4,14 +4,15 @@ import com.naksam.walletserver.data.ClubRepository;
 import com.naksam.walletserver.data.ClubUserRepository;
 import com.naksam.walletserver.data.DepositLogRepository;
 import com.naksam.walletserver.data.UserRepository;
+import com.naksam.walletserver.data.query.WalletQueryRepository;
 import com.naksam.walletserver.domain.entity.Club;
 import com.naksam.walletserver.domain.entity.DepositLog;
 import com.naksam.walletserver.domain.entity.User;
-import com.naksam.walletserver.dto.Deposit;
-import com.naksam.walletserver.dto.MemberPayload;
-import com.naksam.walletserver.dto.WalletInfo;
+import com.naksam.walletserver.dto.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 @AllArgsConstructor
@@ -20,6 +21,7 @@ public class WalletDomain {
     private final ClubRepository clubRepository;
     private final ClubUserRepository clubUserRepository;
     private final DepositLogRepository depositLogRepository;
+    private final WalletQueryRepository walletQueryRepository;
 
     public WalletInfo findMyWalletInfo(MemberPayload memberPayload) {
         return userRepository.findById(1L)
@@ -46,6 +48,13 @@ public class WalletDomain {
 
         DepositLog depositLog = user.depositToClub(deposit.getMoney(), club);
         depositLogRepository.save(depositLog);
+    }
+
+    public WalletHistory findMyWalletHistory(MemberPayload memberPayload) {
+        WalletHistory myWalletHistory = walletQueryRepository.findMyWalletHistory(memberPayload.getId());
+        List<DepositHistory> depositHistories = walletQueryRepository.findDepositHistoryByUserId(memberPayload.getId());
+        myWalletHistory.setDepositHistories(depositHistories);
+        return myWalletHistory;
     }
 
     private boolean userIsNotInClub(boolean exist) {

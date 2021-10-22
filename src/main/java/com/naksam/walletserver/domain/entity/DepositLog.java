@@ -14,10 +14,10 @@ public class DepositLog extends BaseTimeEntity {
     @Column(name = "deposit_log_id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Club club;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
     @Enumerated(EnumType.STRING)
