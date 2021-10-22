@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -27,12 +28,9 @@ public class WalletService {
         return walletDomain.findMyWalletInfo(memberPayload);
     }
 
-    private MemberPayload getMemberPayload(HttpServletRequest req) {
-        String token = HttpSupport.getCookie(req, COOKIE_NAME)
-                .orElseThrow(() -> new RuntimeException("쿠키가 없습니다"))
-                .getValue();
-
-        return accountRetryClient.findInfo(new JsonWebToken(token));
+    public WalletHistory findMyWalletHistory(HttpServletRequest req) {
+        MemberPayload memberPayload = getMemberPayload(req);
+        return walletDomain.findMyWalletHistory(memberPayload);
     }
 
     @Transactional
@@ -55,5 +53,13 @@ public class WalletService {
             System.out.println("ERROR");
             throw new RuntimeException(e);
         }
+    }
+
+    private MemberPayload getMemberPayload(HttpServletRequest req) {
+        String token = HttpSupport.getCookie(req, COOKIE_NAME)
+                .orElseThrow(() -> new RuntimeException("쿠키가 없습니다"))
+                .getValue();
+
+        return accountRetryClient.findInfo(new JsonWebToken(token));
     }
 }

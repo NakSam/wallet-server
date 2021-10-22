@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="feat: 클럽에 회비 납부 기능 추가">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/config/CORSConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/DepositLogRepository.java" afterDir="false" />
+    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="feat: 회비 납부시 로그 저장 기능 구현">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/query/WalletQueryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/DepositHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/WalletHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/InitData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/InitData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/DepositLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/DepositLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/presentation/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/presentation/WalletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,15 +28,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="feature/6" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,7 +124,7 @@
       <workItem from="1634780499681" duration="202000" />
       <workItem from="1634780714636" duration="445000" />
       <workItem from="1634788951114" duration="10975000" />
-      <workItem from="1634861227868" duration="7718000" />
+      <workItem from="1634861227868" duration="15574000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 기본 설정 구현">
       <created>1634794377702</created>
@@ -179,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634867393061</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: 회비 납부시 로그 저장 기능 구현">
+      <created>1634869439618</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1634869439618</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +215,7 @@
     <MESSAGE value="feat: 클럽 가입 메세지 수신 및 가입 처리" />
     <MESSAGE value="fix: 포트변경" />
     <MESSAGE value="feat: 클럽에 회비 납부 기능 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 클럽에 회비 납부 기능 추가" />
+    <MESSAGE value="feat: 회비 납부시 로그 저장 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 회비 납부시 로그 저장 기능 구현" />
   </component>
 </project>
