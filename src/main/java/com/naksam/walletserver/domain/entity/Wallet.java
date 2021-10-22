@@ -21,4 +21,19 @@ public class Wallet implements Serializable {
     public Money amount() {
         return amount;
     }
+
+
+    public void checkMoney(Long amount) {
+        if (amount().isLessThan(Money.wons(amount))) {
+            throw new RuntimeException("잔액이 부족합니다");
+        }
+    }
+
+    public void deposit(Long amount) {
+        this.amount = this.amount.plus(Money.wons(amount));
+    }
+
+    public void withdrawal(Long amount) {
+        this.amount = this.amount.minus(Money.wons(amount));
+    }
 }

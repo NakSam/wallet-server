@@ -1,5 +1,6 @@
 package com.naksam.walletserver.domain.entity;
 
+import com.naksam.walletserver.domain.objects.Money;
 import com.naksam.walletserver.dto.WalletInfo;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
@@ -37,5 +38,18 @@ public class User extends BaseTimeEntity {
 
     public WalletInfo walletInfo() {
         return new WalletInfo(createdTime, wallet.amount());
+    }
+
+    public DepositLog depositToClub(Long amount, Club club) {
+        wallet.checkMoney(amount);
+        wallet.withdrawal(amount);
+        club.deposit(amount);
+
+        return DepositLog.builder()
+                .user(this)
+                .club(club)
+                .detail(DepositLog.Detail.USER_TO_CLUB)
+                .amount(Money.wons(amount))
+                .build();
     }
 }
