@@ -10,20 +10,15 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Getter
+@AllArgsConstructor
 public class DepositHistory {
     private final Long id;
     private final Money amount;
     private final LocalDateTime dateTime;
+    private final Long userId;
     private final ClubName clubName;
     private final String type;
 
-    public DepositHistory(Long id, Money amount, LocalDateTime dateTime, ClubName clubName, String type) {
-        this.id = id;
-        this.amount = amount;
-        this.dateTime = dateTime;
-        this.clubName = clubName;
-        this.type = type;
-    }
 
     public BigDecimal getAmount() {
         return amount.amount();

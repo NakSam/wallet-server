@@ -8,10 +8,7 @@ import com.naksam.walletserver.data.query.WalletQueryRepository;
 import com.naksam.walletserver.domain.entity.Club;
 import com.naksam.walletserver.domain.entity.DepositLog;
 import com.naksam.walletserver.domain.entity.User;
-import com.naksam.walletserver.dto.Deposit;
-import com.naksam.walletserver.dto.MemberPayload;
-import com.naksam.walletserver.dto.WalletHistory;
-import com.naksam.walletserver.dto.WalletInfo;
+import com.naksam.walletserver.dto.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -54,7 +51,10 @@ public class WalletDomain {
     }
 
     public WalletHistory findMyWalletHistory(MemberPayload memberPayload) {
-        return walletQueryRepository.findMyWalletHistory(memberPayload.getId());
+        WalletHistory myWalletHistory = walletQueryRepository.findMyWalletHistory(memberPayload.getId());
+        List<DepositHistory> depositHistories = walletQueryRepository.findDepositHistoryByUserId(memberPayload.getId());
+        myWalletHistory.setDepositHistories(depositHistories);
+        return myWalletHistory;
     }
 
     private boolean userIsNotInClub(boolean exist) {

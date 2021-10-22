@@ -9,6 +9,8 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 import static com.naksam.walletserver.domain.entity.QClub.club;
 import static com.naksam.walletserver.domain.entity.QDepositLog.depositLog;
 import static com.naksam.walletserver.domain.entity.QUser.user;
@@ -20,25 +22,34 @@ public class WalletQueryRepository {
 
     public WalletHistory findMyWalletHistory(Long userId) {
         return query.select(Projections.constructor(WalletHistory.class,
-                        user.id,
-                        user.wallet.amount,
-                        Projections.list(Projections.constructor(DepositHistory.class,
-                                depositLog.id,
-                                depositLog.amount,
-                                depositLog.createdTime,
-                                depositLog.club.name,
-                                new CaseBuilder()
-                                        .when(depositLog.detail.eq(DepositLog.Detail.USER_TO_CLUB))
-                                        .then("출금")
-                                        .otherwise("입금")
-                        ))
-                ))
+                                user.id,
+                                user.wallet.amount
+                        )
+                )
                 .from(user)
                 .where(user.id.eq(userId))
                 .leftJoin(depositLog)
                 .on(depositLog.user.eq(user))
                 .leftJoin(club)
                 .on(depositLog.club.eq(club))
+                .groupBy(user.id)
                 .fetchFirst();
+    }
+
+    public List<DepositHistory> findDepositHistoryByUserId(Long userId) {
+        return query.select(Projections.constructor(DepositHistory.class,
+                        depositLog.id,
+                        depositLog.amount,
+                        depositLog.createdTime,
+                        depositLog.user.id,
+                        club.name,
+                        new CaseBuilder()
+                                .when(depositLog.detail.eq(DepositLog.Detail.USER_TO_CLUB))
+                                .then("출금")
+                                .otherwise("입금")
+                ))
+                .from(depositLog)
+                .where(depositLog.user.id.eq(userId))
+                .fetch();
     }
 }
