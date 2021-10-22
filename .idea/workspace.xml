@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="feat: 지갑 로그 조회 구현">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/ClubWalletLogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/UserWalletLogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/ClubWalletLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/objects/Detail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/DepositToMe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/DepositLogRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/query/WalletQueryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/query/WalletQueryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/DepositLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/UserWalletLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/Deposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/DepositToClub.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/DepositHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/DepositHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/WalletHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/WalletHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/presentation/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/presentation/WalletController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +64,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Barking-Cat/BarkingCat" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -69,10 +81,11 @@
       <recent name="C:\Users\Kang\IdeaProjects\wallet-server\src\main\java\com\naksam\walletserver\domain\objects" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.naksam.walletserver.data" />
+      <recent name="com.naksam.walletserver.domain.entity" />
       <recent name="com.naksam.walletserver.dto" />
       <recent name="com.naksam.walletserver.common" />
       <recent name="com.naksam.walletserver" />
-      <recent name="com.naksam.walletserver.domain.entity" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Application (2)">
@@ -122,6 +135,7 @@
       <workItem from="1634780714636" duration="445000" />
       <workItem from="1634788951114" duration="10975000" />
       <workItem from="1634861227868" duration="15574000" />
+      <workItem from="1634896277881" duration="7452000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 기본 설정 구현">
       <created>1634794377702</created>

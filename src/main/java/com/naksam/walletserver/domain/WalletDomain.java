@@ -1,13 +1,11 @@
 package com.naksam.walletserver.domain;
 
-import com.naksam.walletserver.data.ClubRepository;
-import com.naksam.walletserver.data.ClubUserRepository;
-import com.naksam.walletserver.data.DepositLogRepository;
-import com.naksam.walletserver.data.UserRepository;
+import com.naksam.walletserver.data.*;
 import com.naksam.walletserver.data.query.WalletQueryRepository;
 import com.naksam.walletserver.domain.entity.Club;
-import com.naksam.walletserver.domain.entity.DepositLog;
+import com.naksam.walletserver.domain.entity.ClubWalletLog;
 import com.naksam.walletserver.domain.entity.User;
+import com.naksam.walletserver.domain.entity.UserWalletLog;
 import com.naksam.walletserver.dto.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -20,7 +18,8 @@ public class WalletDomain {
     private final UserRepository userRepository;
     private final ClubRepository clubRepository;
     private final ClubUserRepository clubUserRepository;
-    private final DepositLogRepository depositLogRepository;
+    private final UserWalletLogRepository userWalletLogRepository;
+    private final ClubWalletLogRepository clubWalletLogRepository;
     private final WalletQueryRepository walletQueryRepository;
 
     public WalletInfo findMyWalletInfo(MemberPayload memberPayload) {
@@ -32,32 +31,65 @@ public class WalletDomain {
 //                .walletInfo();
     }
 
-    public void deposit(MemberPayload memberPayload, Deposit deposit) {
+    public void depositToClub(MemberPayload memberPayload, DepositToClub deposit) {
         User user = userRepository.findById(memberPayload.getId())
                 .orElseThrow(() -> new RuntimeException("사용자가 없습니다"));
 
         Club club = clubRepository.findById(deposit.getClubId())
                 .orElseThrow(() -> new RuntimeException("모임이 없습니다"));
 
-        boolean exist = clubUserRepository.findByClubAndUser(club, user)
-                .isPresent();
+        clubUserRepository.findByClubAndUser(club, user)
+                .orElseThrow(() -> new RuntimeException("클럽에 가입된 회원이 아닙니다"));
 
-        if (userIsNotInClub(exist)) {
-            throw new RuntimeException("클럽에 가입된 회원이 아닙니다");
-        }
+        depositToClub(deposit, user, club);
+    }
 
-        DepositLog depositLog = user.depositToClub(deposit.getMoney(), club);
-        depositLogRepository.save(depositLog);
+    private void depositToClub(DepositToClub deposit, User user, Club club) {
+        UserWalletLog userWalletLog = user.withdrawal(deposit.getMoney(), club.name());
+        ClubWalletLog clubWalletLog = club.deposit(deposit.getMoney(), user.name());
+        userWalletLogRepository.save(userWalletLog);
+        clubWalletLogRepository.save(clubWalletLog);
+    }
+
+    public void depositToMe(MemberPayload memberPayload, DepositToMe depositToMe) {
+        User user = userRepository.findById(memberPayload.getId())
+                .orElseThrow(() -> new RuntimeException("사용자가 없습니다"));
+
+        UserWalletLog userWalletLog = user.deposit(depositToMe.getMoney());
+        userWalletLogRepository.save(userWalletLog);
     }
 
     public WalletHistory findMyWalletHistory(MemberPayload memberPayload) {
-        WalletHistory myWalletHistory = walletQueryRepository.findMyWalletHistory(memberPayload.getId());
-        List<DepositHistory> depositHistories = walletQueryRepository.findDepositHistoryByUserId(memberPayload.getId());
+        WalletHistory myWalletHistory = createUserWalletHistory(memberPayload);
+        List<DepositHistory> depositHistories = walletQueryRepository.findWalletHistoryOfUser(memberPayload.getId());
         myWalletHistory.setDepositHistories(depositHistories);
         return myWalletHistory;
     }
 
-    private boolean userIsNotInClub(boolean exist) {
-        return !exist;
+    private WalletHistory createUserWalletHistory(MemberPayload memberPayload) {
+        Long amount = userRepository.findById(memberPayload.getId())
+                .orElseThrow(() -> new RuntimeException("사용자가 없습니다"))
+                .walletInfo()
+                .getAmount();
+
+        return new WalletHistory(amount);
+    }
+
+    public WalletHistory findClubWalletHistory(MemberPayload memberPayload, Long clubId) {
+        User user = userRepository.findById(memberPayload.getId())
+                .orElseThrow(() -> new RuntimeException("사용자가 없습니다"));
+
+        Club club = clubRepository.findById(clubId)
+                .orElseThrow(() -> new RuntimeException("모임이 없습니다"));
+
+        clubUserRepository.findByClubAndUser(club, user)
+                .orElseThrow(() -> new RuntimeException("클럽에 가입된 회원이 아닙니다"));
+
+        WalletHistory walletHistory = new WalletHistory(club.walletInfo()
+                .getAmount());
+
+        walletHistory.setDepositHistories(walletQueryRepository.findWalletHistoryOfClub(clubId));
+
+        return walletHistory;
     }
 }

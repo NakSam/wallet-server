@@ -1,6 +1,7 @@
 package com.naksam.walletserver.presentation;
 
-import com.naksam.walletserver.dto.Deposit;
+import com.naksam.walletserver.dto.DepositToClub;
+import com.naksam.walletserver.dto.DepositToMe;
 import com.naksam.walletserver.dto.WalletHistory;
 import com.naksam.walletserver.dto.WalletInfo;
 import com.naksam.walletserver.service.WalletService;
@@ -9,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -30,9 +30,22 @@ public class WalletController {
         return ResponseEntity.ok(myWalletHistory);
     }
 
-    @PostMapping("/deposit")
-    public ResponseEntity<?> depositPoint(@RequestBody Deposit deposit, HttpServletRequest req) {
-        walletService.deposit(deposit, req);
+    @GetMapping("/club/{clubId}/history")
+    public ResponseEntity<?> findClubWalletHistory(@PathVariable Long clubId, HttpServletRequest req) {
+        WalletHistory walletHistory = walletService.findClubWalletHistory(clubId, req);
+        return ResponseEntity.ok(walletHistory);
+    }
+
+    @PostMapping("/my/deposit")
+    public ResponseEntity<?> depositMyWallet(@RequestBody DepositToMe depositToMe, HttpServletRequest req) {
+        walletService.depositToMe(depositToMe, req);
+        return ResponseEntity.ok()
+                .build();
+    }
+
+    @PostMapping("/club/deposit")
+    public ResponseEntity<?> depositToClub(@RequestBody DepositToClub deposit, HttpServletRequest req) {
+        walletService.depositToClub(deposit, req);
         return ResponseEntity.ok()
                 .build();
     }

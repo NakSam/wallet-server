@@ -1,11 +1,11 @@
 package com.naksam.walletserver.domain.entity;
 
 import com.naksam.walletserver.domain.objects.ClubName;
-import com.naksam.walletserver.domain.objects.MemberNumber;
+import com.naksam.walletserver.domain.objects.Detail;
+import com.naksam.walletserver.domain.objects.Money;
+import com.naksam.walletserver.dto.WalletInfo;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.LazyToOne;
-import org.hibernate.annotations.LazyToOneOption;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -36,7 +36,21 @@ public class Club extends BaseTimeEntity {
         this.wallet = wallet;
     }
 
-    public void deposit(Long money) {
+    public ClubWalletLog deposit(Long money, String targetName) {
         wallet.deposit(money);
+        return ClubWalletLog.builder()
+                .club(this)
+                .detail(Detail.DEPOSIT)
+                .amount(Money.wons(money))
+                .targetName(targetName)
+                .build();
+    }
+
+    public WalletInfo walletInfo() {
+        return new WalletInfo(createdTime, wallet.amount());
+    }
+
+    public String name() {
+        return this.name.content();
     }
 }

@@ -33,9 +33,15 @@ public class WalletService {
     }
 
     @Transactional
-    public void deposit(Deposit deposit, HttpServletRequest req) {
+    public void depositToClub(DepositToClub depositToClub, HttpServletRequest req) {
         MemberPayload memberPayload = getMemberPayload(req);
-        walletDomain.deposit(memberPayload, deposit);
+        walletDomain.depositToClub(memberPayload, depositToClub);
+    }
+
+    @Transactional
+    public void depositToMe(DepositToMe depositToMe, HttpServletRequest req) {
+        MemberPayload memberPayload = getMemberPayload(req);
+        walletDomain.depositToMe(memberPayload, depositToMe);
     }
 
     @KafkaListener(topics = "${bootcamp.club.topic}")
@@ -60,5 +66,10 @@ public class WalletService {
                 .getValue();
 
         return accountRetryClient.findInfo(new JsonWebToken(token));
+    }
+
+    public WalletHistory findClubWalletHistory(Long clubId, HttpServletRequest req) {
+        MemberPayload memberPayload = getMemberPayload(req);
+        return walletDomain.findClubWalletHistory(memberPayload, clubId);
     }
 }

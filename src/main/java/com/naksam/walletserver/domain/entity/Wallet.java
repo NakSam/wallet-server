@@ -30,6 +30,7 @@ public class Wallet implements Serializable {
     }
 
     public void deposit(Long amount) {
+        System.out.println(amount);
         this.amount = this.amount.plus(Money.wons(amount));
     }
 
