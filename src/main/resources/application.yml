@@ -1,5 +1,5 @@
 server:
-#   port: ${CLUB_PORT:8080}
+  port: 8081
   servlet:
     context-path: ${SERVLET_CONTEXT_PATH:/wallet}
 
@@ -24,3 +24,21 @@ spring:
       maximum-pool-size: 30
       minimum-idle: 2
       connection-test-query: SELECT 1
+
+  kafka:
+    bootstrap-servers: ${KAFKA_BROKER:169.56.174.138}:${KAFKA_BROKER_PORT:31278}
+    listener.ack-mode: MANUAL_IMMEDIATE
+    producer:
+      acks: 1
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: ${CONSUMER_GROUP:naksam-consumer-group}
+      auto-offset-reset: latest
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+bootcamp:
+  club:
+    topic: ${WALLET_TOPIC:naksam-club-join}
