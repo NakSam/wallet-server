@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="feat: 클럽에 회비 납부 기능 추가">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/DepositLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/Deposit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/config/CORSConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/DepositLogRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/ClubUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/ClubUserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/DepositLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/DepositLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Wallet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/presentation/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/presentation/WalletController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -125,7 +121,7 @@
       <workItem from="1634780499681" duration="202000" />
       <workItem from="1634780714636" duration="445000" />
       <workItem from="1634788951114" duration="10975000" />
-      <workItem from="1634861227868" duration="5633000" />
+      <workItem from="1634861227868" duration="7718000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 기본 설정 구현">
       <created>1634794377702</created>
@@ -176,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634864446382</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: 클럽에 회비 납부 기능 추가">
+      <created>1634867393060</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1634867393061</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

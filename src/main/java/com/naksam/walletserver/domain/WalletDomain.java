@@ -2,8 +2,10 @@ package com.naksam.walletserver.domain;
 
 import com.naksam.walletserver.data.ClubRepository;
 import com.naksam.walletserver.data.ClubUserRepository;
+import com.naksam.walletserver.data.DepositLogRepository;
 import com.naksam.walletserver.data.UserRepository;
 import com.naksam.walletserver.domain.entity.Club;
+import com.naksam.walletserver.domain.entity.DepositLog;
 import com.naksam.walletserver.domain.entity.User;
 import com.naksam.walletserver.dto.Deposit;
 import com.naksam.walletserver.dto.MemberPayload;
@@ -17,6 +19,7 @@ public class WalletDomain {
     private final UserRepository userRepository;
     private final ClubRepository clubRepository;
     private final ClubUserRepository clubUserRepository;
+    private final DepositLogRepository depositLogRepository;
 
     public WalletInfo findMyWalletInfo(MemberPayload memberPayload) {
         return userRepository.findById(1L)
@@ -41,7 +44,8 @@ public class WalletDomain {
             throw new RuntimeException("클럽에 가입된 회원이 아닙니다");
         }
 
-        user.depositToClub(deposit.getMoney(), club);
+        DepositLog depositLog = user.depositToClub(deposit.getMoney(), club);
+        depositLogRepository.save(depositLog);
     }
 
     private boolean userIsNotInClub(boolean exist) {
