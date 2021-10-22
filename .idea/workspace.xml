@@ -4,17 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="refactor: 엔티티 수정">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/common/HttpSupport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/config/FeignConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/config/FeignRetryConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/JsonWebToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/MemberPayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/feign/AccountClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/feign/AccountRetryClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/feign/FeignErrorDecode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" afterDir="false" />
+    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="refactor: account 서버와 통신 추가">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_luben_zstd_jni_1_4_5_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_clients_2_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_lz4_lz4_java_1_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_kafka_spring_kafka_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_3_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_snappy_snappy_java_1_1_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/ClubDomain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/JoinClubMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployment/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/wallet-server.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,15 +37,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="feature/1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,8 +81,8 @@
       <recent name="C:\Users\Kang\IdeaProjects\wallet-server\src\main\java\com\naksam\walletserver\domain\objects" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.naksam.walletserver.common" />
       <recent name="com.naksam.walletserver.dto" />
+      <recent name="com.naksam.walletserver.common" />
       <recent name="com.naksam.walletserver" />
       <recent name="com.naksam.walletserver.domain.entity" />
     </key>
@@ -124,7 +132,8 @@
       <workItem from="1634779987674" duration="492000" />
       <workItem from="1634780499681" duration="202000" />
       <workItem from="1634780714636" duration="445000" />
-      <workItem from="1634788951114" duration="9796000" />
+      <workItem from="1634788951114" duration="10975000" />
+      <workItem from="1634861227868" duration="1661000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 기본 설정 구현">
       <created>1634794377702</created>
@@ -154,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634798461941</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor: account 서버와 통신 추가">
+      <created>1634802440993</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1634802440993</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +192,7 @@
     <MESSAGE value="feat: 기본 설정 구현" />
     <MESSAGE value="feat: 지갑 조회 기본 기능 구현" />
     <MESSAGE value="refactor: 엔티티 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: 엔티티 수정" />
+    <MESSAGE value="refactor: account 서버와 통신 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: account 서버와 통신 추가" />
   </component>
 </project>
