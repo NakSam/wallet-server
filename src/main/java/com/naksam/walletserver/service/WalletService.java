@@ -4,10 +4,7 @@ import com.google.gson.Gson;
 import com.naksam.walletserver.common.HttpSupport;
 import com.naksam.walletserver.domain.ClubDomain;
 import com.naksam.walletserver.domain.WalletDomain;
-import com.naksam.walletserver.dto.JoinClubMessage;
-import com.naksam.walletserver.dto.JsonWebToken;
-import com.naksam.walletserver.dto.MemberPayload;
-import com.naksam.walletserver.dto.WalletInfo;
+import com.naksam.walletserver.dto.*;
 import com.naksam.walletserver.feign.AccountRetryClient;
 import lombok.AllArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -36,6 +33,12 @@ public class WalletService {
                 .getValue();
 
         return accountRetryClient.findInfo(new JsonWebToken(token));
+    }
+
+    @Transactional
+    public void deposit(Deposit deposit, HttpServletRequest req) {
+        MemberPayload memberPayload = getMemberPayload(req);
+        walletDomain.deposit(memberPayload, deposit);
     }
 
     @KafkaListener(topics = "${bootcamp.club.topic}")

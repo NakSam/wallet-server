@@ -35,4 +35,8 @@ public class Club extends BaseTimeEntity {
         this.clubMaster = clubMaster;
         this.wallet = wallet;
     }
+
+    public void deposit(Long money) {
+        wallet.deposit(money);
+    }
 }
