@@ -76,6 +76,8 @@ public class Club extends BaseTimeEntity {
             clubWalletLogs.add(withdrawal(divided.longValue(), user));
         });
 
+        undistributedLogOfClub.forEach(ClubWalletLog::distribute);
+
         return new DistributeLog(userWalletLogs, clubWalletLogs);
     }
 

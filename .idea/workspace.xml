@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="feat: 클럽에 입금 기능&#10;클럽에 입금&#10;입금 내역 로그&#10;로그 기능 리펙토링">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/query/UserQueryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/DistributeLog.java" afterDir="false" />
+    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="feat: 정산&#10;팀 멤버들에게 입금한 금액의 비율만큼 정산&#10;비율에 따른 입금 금액은 올림처리&#10;페이백 합산">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/InitData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/InitData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/query/WalletQueryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/query/WalletQueryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/ClubWalletLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/ClubWalletLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/objects/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/objects/Money.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/presentation/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/presentation/WalletController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/10" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -131,7 +121,7 @@
       <workItem from="1634788951114" duration="10975000" />
       <workItem from="1634861227868" duration="15574000" />
       <workItem from="1634896277881" duration="8262000" />
-      <workItem from="1634985948730" duration="7543000" />
+      <workItem from="1634985948730" duration="8585000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 기본 설정 구현">
       <created>1634794377702</created>
@@ -203,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634908492123</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: 정산&#10;팀 멤버들에게 입금한 금액의 비율만큼 정산&#10;비율에 따른 입금 금액은 올림처리&#10;페이백 합산">
+      <created>1635011170543</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1635011170543</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +228,7 @@
     <MESSAGE value="feat: 클럽에 회비 납부 기능 추가" />
     <MESSAGE value="feat: 회비 납부시 로그 저장 기능 구현" />
     <MESSAGE value="feat: 클럽에 입금 기능&#10;클럽에 입금&#10;입금 내역 로그&#10;로그 기능 리펙토링" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 클럽에 입금 기능&#10;클럽에 입금&#10;입금 내역 로그&#10;로그 기능 리펙토링" />
+    <MESSAGE value="feat: 정산&#10;팀 멤버들에게 입금한 금액의 비율만큼 정산&#10;비율에 따른 입금 금액은 올림처리&#10;페이백 합산" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 정산&#10;팀 멤버들에게 입금한 금액의 비율만큼 정산&#10;비율에 따른 입금 금액은 올림처리&#10;페이백 합산" />
   </component>
 </project>
