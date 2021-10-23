@@ -126,7 +126,7 @@ public class InitData {
 
             Wallet wallet8 = Wallet
                     .builder()
-                    .amount(Money.wons(1_000_000))
+                    .amount(Money.wons(0))
                     .build();
 
             Club club1 = Club.builder()
@@ -144,7 +144,7 @@ public class InitData {
 
             Wallet wallet9 = Wallet
                     .builder()
-                    .amount(Money.wons(1_000_000))
+                    .amount(Money.wons(0))
                     .build();
 
             Club club2 = Club.builder()
@@ -162,7 +162,7 @@ public class InitData {
 
             Wallet wallet10 = Wallet
                     .builder()
-                    .amount(Money.wons(1_000_000))
+                    .amount(Money.wons(0))
                     .build();
 
             Club club3 = Club.builder()
@@ -180,7 +180,7 @@ public class InitData {
 
             Wallet wallet11 = Wallet
                     .builder()
-                    .amount(Money.wons(1_000_000))
+                    .amount(Money.wons(100_000_000))
                     .build();
 
             User user = User.builder()
@@ -191,11 +191,9 @@ public class InitData {
 
             em.persist(user);
 
-
-
             Wallet wallet12 = Wallet
                     .builder()
-                    .amount(Money.wons(1_000_000))
+                    .amount(Money.wons(0))
                     .build();
 
             Club club4 = Club.builder()
@@ -210,6 +208,12 @@ public class InitData {
                     .user(user)
                     .build();
             em.persist(clubUser4);
+
+            ClubUser clubUser5 = ClubUser.builder()
+                    .club(club4)
+                    .user(user)
+                    .build();
+            em.persist(clubUser5);
         }
     }
 }
