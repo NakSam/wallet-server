@@ -49,4 +49,11 @@ public class WalletController {
         return ResponseEntity.ok()
                 .build();
     }
+
+    @PostMapping("/club/{clubId}/distribute")
+    public ResponseEntity<?> distribute(@PathVariable Long clubId, HttpServletRequest req) {
+        walletService.distribute(clubId, req);
+        return ResponseEntity.ok()
+                .build();
+    }
 }

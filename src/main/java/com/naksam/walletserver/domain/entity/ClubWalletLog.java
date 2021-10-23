@@ -23,14 +23,32 @@ public class ClubWalletLog extends BaseTimeEntity {
 
     private Money amount;
 
+    private Long targetId;
+
     private String targetName;
 
+    private Boolean distributed;
+
     @Builder
-    public ClubWalletLog(Long id, Club club, Detail detail, Money amount, String targetName) {
+    public ClubWalletLog(Long id, Club club, Detail detail, Money amount, Long targetId, String targetName) {
         this.id = id;
         this.club = club;
         this.detail = detail;
         this.amount = amount;
+        this.targetId = targetId;
         this.targetName = targetName;
+        this.distributed = false;
+    }
+
+    public void distribute() {
+        this.distributed = true;
+    }
+
+    public Money amount() {
+        return this.amount;
+    }
+
+    public Long targetId() {
+        return this.targetId;
     }
 }

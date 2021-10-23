@@ -3,6 +3,7 @@ package com.naksam.walletserver.domain.objects;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.function.Function;
@@ -50,6 +51,10 @@ public class Money implements Serializable {
         return new Money(amount.divide(BigDecimal.valueOf(divisor)));
     }
 
+    public Money ceiling() {
+        return new Money(amount.setScale(0, RoundingMode.CEILING));
+    }
+
     public boolean isLessThan(Money other) {
         return amount.compareTo(other.amount) < 0;
     }
@@ -68,6 +73,11 @@ public class Money implements Serializable {
 
     public Double doubleValue() {
         return amount.doubleValue();
+    }
+
+    public Double ratio(long divisor) {
+        return amount.divide(BigDecimal.valueOf(divisor))
+                .doubleValue();
     }
 
     public boolean equals(Object object) {

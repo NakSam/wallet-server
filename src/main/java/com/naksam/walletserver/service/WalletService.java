@@ -60,16 +60,21 @@ public class WalletService {
         }
     }
 
+    public WalletHistory findClubWalletHistory(Long clubId, HttpServletRequest req) {
+        MemberPayload memberPayload = getMemberPayload(req);
+        return walletDomain.findClubWalletHistory(memberPayload, clubId);
+    }
+
+    public void distribute(Long clubId, HttpServletRequest req) {
+        MemberPayload memberPayload = getMemberPayload(req);
+        walletDomain.distribute(memberPayload, clubId);
+    }
+
     private MemberPayload getMemberPayload(HttpServletRequest req) {
         String token = HttpSupport.getCookie(req, COOKIE_NAME)
                 .orElseThrow(() -> new RuntimeException("쿠키가 없습니다"))
                 .getValue();
 
         return accountRetryClient.findInfo(new JsonWebToken(token));
-    }
-
-    public WalletHistory findClubWalletHistory(Long clubId, HttpServletRequest req) {
-        MemberPayload memberPayload = getMemberPayload(req);
-        return walletDomain.findClubWalletHistory(memberPayload, clubId);
     }
 }
