@@ -1,7 +1,6 @@
 package com.naksam.walletserver.service;
 
 import com.google.gson.Gson;
-import com.naksam.walletserver.common.HttpSupport;
 import com.naksam.walletserver.domain.ClubDomain;
 import com.naksam.walletserver.domain.WalletDomain;
 import com.naksam.walletserver.dto.*;
@@ -56,11 +55,12 @@ public class WalletService {
     }
 
     private MemberPayload getMemberPayload(HttpServletRequest req) {
-        String token = HttpSupport.getCookie(req, COOKIE_NAME)
-                .orElseThrow(() -> new RuntimeException("쿠키가 없습니다"))
-                .getValue();
-
-        return accountRetryClient.findInfo(new JsonWebToken(token));
+//        String token = HttpSupport.getCookie(req, COOKIE_NAME)
+//                .orElseThrow(() -> new RuntimeException("쿠키가 없습니다"))
+//                .getValue();
+//
+//        return accountRetryClient.findInfo(new JsonWebToken(token));
+        return new MemberPayload(1L, "asd@google.com", "Kang");
     }
 
     @KafkaListener(topics = "${bootcamp.club.join}")
