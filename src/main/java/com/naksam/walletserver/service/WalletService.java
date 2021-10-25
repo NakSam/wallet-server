@@ -21,6 +21,7 @@ public class WalletService {
     private final ClubDomain clubDomain;
     private AccountRetryClient accountRetryClient;
     private static final String COOKIE_NAME = "naksam";
+    private Gson gson = new Gson();
 
     public WalletInfo findMyWalletInfo(HttpServletRequest req) {
         MemberPayload memberPayload = getMemberPayload(req);
@@ -44,22 +45,6 @@ public class WalletService {
         walletDomain.depositToMe(memberPayload, depositToMe);
     }
 
-    @KafkaListener(topics = "${bootcamp.club.topic}")
-    @Transactional
-    public void receiveJoinMessage(String message, Acknowledgment ack) {
-        Gson gson = new Gson();
-        try {
-            System.out.println(message);
-            JoinClubMessage joinClubMessage = gson.fromJson(message, JoinClubMessage.class);
-            System.out.println("joinClubMessage obj from kafka: " + joinClubMessage);
-            clubDomain.joinClub(joinClubMessage);
-            ack.acknowledge();
-        } catch (Exception e) {
-            System.out.println("ERROR");
-            throw new RuntimeException(e);
-        }
-    }
-
     public WalletHistory findClubWalletHistory(Long clubId, HttpServletRequest req) {
         MemberPayload memberPayload = getMemberPayload(req);
         return walletDomain.findClubWalletHistory(memberPayload, clubId);
@@ -76,5 +61,35 @@ public class WalletService {
                 .getValue();
 
         return accountRetryClient.findInfo(new JsonWebToken(token));
+    }
+
+    @KafkaListener(topics = "${bootcamp.club.join}")
+    @Transactional
+    public void receiveJoinMessage(String message, Acknowledgment ack) {
+        try {
+            System.out.println(message);
+            JoinClubMessage joinClubMessage = gson.fromJson(message, JoinClubMessage.class);
+            System.out.println("joinClubMessage obj from kafka: " + joinClubMessage);
+            clubDomain.joinClub(joinClubMessage);
+            ack.acknowledge();
+        } catch (Exception e) {
+            System.out.println("ERROR");
+            throw new RuntimeException(e);
+        }
+    }
+
+    @KafkaListener(topics = "${bootcamp.club.create}")
+    @Transactional
+    public void receiveCreateMessage(String message, Acknowledgment ack) {
+        try {
+            System.out.println(message);
+            CreateClubMessage createClubMessage = gson.fromJson(message, CreateClubMessage.class);
+            System.out.println("joinClubMessage obj from kafka: " + createClubMessage);
+            clubDomain.createClub(createClubMessage);
+            ack.acknowledge();
+        } catch (Exception e) {
+            System.out.println("ERROR");
+            throw new RuntimeException(e);
+        }
     }
 }

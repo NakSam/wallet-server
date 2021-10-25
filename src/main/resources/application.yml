@@ -41,4 +41,5 @@ spring:
 
 bootcamp:
   club:
-    topic: ${WALLET_TOPIC:naksam-club-join}
+    join: ${WALLET_TOPIC:naksam-club-join}
+    create: ${CREATE_TOPIC:naksam-club-create}

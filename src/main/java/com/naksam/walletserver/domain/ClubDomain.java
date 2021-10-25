@@ -6,6 +6,10 @@ import com.naksam.walletserver.data.UserRepository;
 import com.naksam.walletserver.domain.entity.Club;
 import com.naksam.walletserver.domain.entity.ClubUser;
 import com.naksam.walletserver.domain.entity.User;
+import com.naksam.walletserver.domain.entity.Wallet;
+import com.naksam.walletserver.domain.objects.ClubName;
+import com.naksam.walletserver.domain.objects.Money;
+import com.naksam.walletserver.dto.CreateClubMessage;
 import com.naksam.walletserver.dto.JoinClubMessage;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -23,6 +27,26 @@ public class ClubDomain {
 
         Club club = clubRepository.findById(joinClubMessage.getClubId())
                 .orElseThrow(() -> new RuntimeException("모임이 없습니다"));
+
+        ClubUser clubUser = ClubUser.builder()
+                .club(club)
+                .user(user)
+                .build();
+
+        clubUserRepository.save(clubUser);
+    }
+
+    public void createClub(CreateClubMessage createClubMessage) {
+        User user = userRepository.findById(createClubMessage.getUserId())
+                .orElseThrow(() -> new RuntimeException("사용자가 없습니다"));
+
+        Club club = Club.builder()
+                .clubMaster(user)
+                .name(new ClubName(createClubMessage.getClubName()))
+                .wallet(new Wallet(Money.ZERO))
+                .build();
+
+        clubRepository.save(club);
 
         ClubUser clubUser = ClubUser.builder()
                 .club(club)

@@ -17,4 +17,5 @@ data:
   KAFKA_BROKER_PORT: "9092"
   CONSUMER_GROUP: naksam-consumer-group
   WALLET_TOPIC: naksam-club-join
+  CREATE_TOPIC: naksam-club-create
   ACCOUNT_HOST: http://account:8080/account
