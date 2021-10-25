@@ -44,6 +44,7 @@ public class ClubDomain {
                 .clubMaster(user)
                 .name(new ClubName(createClubMessage.getClubName()))
                 .wallet(new Wallet(Money.ZERO))
+                .dues(createClubMessage.getAmount())
                 .build();
 
         clubRepository.save(club);

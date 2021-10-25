@@ -33,22 +33,24 @@ public class WalletDomain {
 //                .walletInfo();
     }
 
-    public void depositToClub(MemberPayload memberPayload, DepositToClub deposit) {
+    public void depositToClub(MemberPayload memberPayload, Long clubId) {
         User user = userRepository.findById(memberPayload.getId())
                 .orElseThrow(() -> new RuntimeException("사용자가 없습니다"));
 
-        Club club = clubRepository.findById(deposit.getClubId())
+        Club club = clubRepository.findById(clubId)
                 .orElseThrow(() -> new RuntimeException("모임이 없습니다"));
 
         clubUserRepository.findByClubAndUser(club, user)
                 .orElseThrow(() -> new RuntimeException("클럽에 가입된 회원이 아닙니다"));
 
-        depositToClub(deposit, user, club);
+        Long dues = club.dues();
+
+        depositToClub(dues, user, club);
     }
 
-    private void depositToClub(DepositToClub deposit, User user, Club club) {
-        UserWalletLog userWalletLog = user.withdrawal(deposit.getMoney(), club.name());
-        ClubWalletLog clubWalletLog = club.deposit(deposit.getMoney(), user);
+    private void depositToClub(Long dues, User user, Club club) {
+        UserWalletLog userWalletLog = user.withdrawal(dues, club.name());
+        ClubWalletLog clubWalletLog = club.deposit(dues, user);
         userWalletLogRepository.save(userWalletLog);
         clubWalletLogRepository.save(clubWalletLog);
     }

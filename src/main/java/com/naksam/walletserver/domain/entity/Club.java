@@ -21,7 +21,6 @@ public class Club extends BaseTimeEntity {
     @Column(name = "club_id")
     private Long id;
 
-    @Column(name = "name")
     private ClubName name;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -30,13 +29,16 @@ public class Club extends BaseTimeEntity {
 
     private Wallet wallet;
 
+    private Long dues;
+
     @Builder
-    public Club(LocalDateTime createdTime, LocalDateTime modifiedTime, Long id, ClubName name, User clubMaster, Wallet wallet) {
+    public Club(LocalDateTime createdTime, LocalDateTime modifiedTime, Long id, ClubName name, User clubMaster, Wallet wallet, Long dues) {
         super(createdTime, modifiedTime);
         this.id = id;
         this.name = name;
         this.clubMaster = clubMaster;
         this.wallet = wallet;
+        this.dues = dues;
     }
 
     public ClubWalletLog deposit(Long money, User target) {
@@ -130,5 +132,9 @@ public class Club extends BaseTimeEntity {
 
     public String name() {
         return this.name.content();
+    }
+
+    public Long dues() {
+        return dues;
     }
 }

@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="feat: 불리언 컨버터 적용">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/CreateClubMessage.java" afterDir="false" />
+    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="fix: 클럽 등록시 메세지 수신하도록 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployment/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deployment/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/ClubDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/ClubDomain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/dto/DepositToClub.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/presentation/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/presentation/WalletController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/service/WalletService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +126,7 @@
       <workItem from="1634861227868" duration="15574000" />
       <workItem from="1634896277881" duration="8262000" />
       <workItem from="1634985948730" duration="9871000" />
-      <workItem from="1635130127942" duration="4040000" />
+      <workItem from="1635130127942" duration="4968000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 기본 설정 구현">
       <created>1634794377702</created>
@@ -219,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635012473222</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix: 클럽 등록시 메세지 수신하도록 수정">
+      <created>1635136564952</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1635136564952</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +257,7 @@
     <MESSAGE value="feat: 정산&#10;팀 멤버들에게 입금한 금액의 비율만큼 정산&#10;비율에 따른 입금 금액은 올림처리&#10;페이백 합산" />
     <MESSAGE value="fix: 정산 여부 추가" />
     <MESSAGE value="feat: 불리언 컨버터 적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 불리언 컨버터 적용" />
+    <MESSAGE value="fix: 클럽 등록시 메세지 수신하도록 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 클럽 등록시 메세지 수신하도록 수정" />
   </component>
 </project>

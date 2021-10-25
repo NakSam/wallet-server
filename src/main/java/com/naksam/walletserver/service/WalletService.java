@@ -34,9 +34,9 @@ public class WalletService {
     }
 
     @Transactional
-    public void depositToClub(DepositToClub depositToClub, HttpServletRequest req) {
+    public void depositToClub(Long clubId, HttpServletRequest req) {
         MemberPayload memberPayload = getMemberPayload(req);
-        walletDomain.depositToClub(memberPayload, depositToClub);
+        walletDomain.depositToClub(memberPayload, clubId);
     }
 
     @Transactional
