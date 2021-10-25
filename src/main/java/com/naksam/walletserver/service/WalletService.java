@@ -44,14 +44,22 @@ public class WalletService {
         walletDomain.depositToMe(memberPayload, depositToMe);
     }
 
+    @Transactional
     public WalletHistory findClubWalletHistory(Long clubId, HttpServletRequest req) {
         MemberPayload memberPayload = getMemberPayload(req);
         return walletDomain.findClubWalletHistory(memberPayload, clubId);
     }
 
+    @Transactional
     public void distribute(Long clubId, HttpServletRequest req) {
         MemberPayload memberPayload = getMemberPayload(req);
         walletDomain.distribute(memberPayload, clubId);
+    }
+
+    @Transactional
+    public void exchange(Exchange exchange, HttpServletRequest req) {
+        MemberPayload memberPayload = getMemberPayload(req);
+        walletDomain.exchange(memberPayload, exchange);
     }
 
     private MemberPayload getMemberPayload(HttpServletRequest req) {

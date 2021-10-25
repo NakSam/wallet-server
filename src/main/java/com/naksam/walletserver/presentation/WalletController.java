@@ -1,6 +1,7 @@
 package com.naksam.walletserver.presentation;
 
 import com.naksam.walletserver.dto.DepositToMe;
+import com.naksam.walletserver.dto.Exchange;
 import com.naksam.walletserver.dto.WalletHistory;
 import com.naksam.walletserver.dto.WalletInfo;
 import com.naksam.walletserver.service.WalletService;
@@ -52,6 +53,13 @@ public class WalletController {
     @PostMapping("/club/{clubId}/distribute")
     public ResponseEntity<?> distribute(@PathVariable Long clubId, HttpServletRequest req) {
         walletService.distribute(clubId, req);
+        return ResponseEntity.ok()
+                .build();
+    }
+
+    @PostMapping("/my/exchange")
+    public ResponseEntity<?> exchange(@RequestBody Exchange exchange, HttpServletRequest req) {
+        walletService.exchange(exchange, req);
         return ResponseEntity.ok()
                 .build();
     }

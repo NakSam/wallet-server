@@ -113,4 +113,13 @@ public class WalletDomain {
         userWalletLogRepository.saveAll(distributeLog.getUserWalletLogs());
         clubWalletLogRepository.saveAll(distributeLog.getClubWalletLogs());
     }
+
+    public void exchange(MemberPayload memberPayload, Exchange exchange) {
+        User user = userRepository.findById(memberPayload.getId())
+                .orElseThrow(() -> new RuntimeException("사용자가 없습니다"));
+
+        UserWalletLog withdrawal = user.withdrawal(exchange.getMoney(), memberPayload.getName());
+
+        userWalletLogRepository.save(withdrawal);
+    }
 }
