@@ -122,4 +122,17 @@ public class WalletDomain {
 
         userWalletLogRepository.save(withdrawal);
     }
+
+    public void payment(MemberPayload memberPayload, Payment payment, Long clubId) {
+        User user = userRepository.findById(memberPayload.getId())
+                .orElseThrow(() -> new RuntimeException("사용자가 없습니다"));
+
+        Club club = clubRepository.findById(clubId)
+                .orElseThrow(() -> new RuntimeException("모임이 없습니다"));
+
+        clubUserRepository.findByClubAndUser(club, user)
+                .orElseThrow(() -> new RuntimeException("클럽에 가입된 회원이 아닙니다"));
+
+        club.payment(payment);
+    }
 }

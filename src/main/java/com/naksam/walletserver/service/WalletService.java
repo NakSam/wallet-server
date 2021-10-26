@@ -62,6 +62,12 @@ public class WalletService {
         walletDomain.exchange(memberPayload, exchange);
     }
 
+    @Transactional
+    public void payment(Long clubId, Payment payment, HttpServletRequest req) {
+        MemberPayload memberPayload = getMemberPayload(req);
+        walletDomain.payment(memberPayload, payment, clubId);
+    }
+
     private MemberPayload getMemberPayload(HttpServletRequest req) {
 //        String token = HttpSupport.getCookie(req, COOKIE_NAME)
 //                .orElseThrow(() -> new RuntimeException("쿠키가 없습니다"))

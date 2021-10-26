@@ -23,7 +23,7 @@ public class Wallet implements Serializable {
     }
 
 
-    public void checkMoney(Long amount) {
+    private void checkMoney(Long amount) {
         if (amount().isLessThan(Money.wons(amount))) {
             throw new RuntimeException("잔액이 부족합니다");
         }
@@ -35,6 +35,7 @@ public class Wallet implements Serializable {
     }
 
     public void withdrawal(Long amount) {
+        checkMoney(amount);
         this.amount = this.amount.minus(Money.wons(amount));
     }
 }

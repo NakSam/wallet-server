@@ -4,6 +4,7 @@ import com.naksam.walletserver.domain.objects.ClubName;
 import com.naksam.walletserver.domain.objects.Detail;
 import com.naksam.walletserver.domain.objects.Money;
 import com.naksam.walletserver.dto.DistributeLog;
+import com.naksam.walletserver.dto.Payment;
 import com.naksam.walletserver.dto.WalletInfo;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
@@ -53,7 +54,6 @@ public class Club extends BaseTimeEntity {
     }
 
     public ClubWalletLog withdrawal(Long amount, User target) {
-        wallet.checkMoney(amount);
         wallet.withdrawal(amount);
 
         return ClubWalletLog.builder()
@@ -136,5 +136,9 @@ public class Club extends BaseTimeEntity {
 
     public Long dues() {
         return dues;
+    }
+
+    public void payment(Payment payment) {
+        wallet.withdrawal(payment.getMoney());
     }
 }
