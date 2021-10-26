@@ -28,6 +28,11 @@ public class ClubDomain {
         Club club = clubRepository.findById(joinClubMessage.getClubId())
                 .orElseThrow(() -> new RuntimeException("모임이 없습니다"));
 
+        boolean isPresent = clubUserRepository.findByClubAndUser(club, user).isPresent();
+        if (isPresent) {
+            return;
+        }
+
         ClubUser clubUser = ClubUser.builder()
                 .club(club)
                 .user(user)
