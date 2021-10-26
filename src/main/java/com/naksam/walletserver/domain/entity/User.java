@@ -57,7 +57,6 @@ public class User extends BaseTimeEntity {
     }
 
     public UserWalletLog withdrawal(Long amount, String name) {
-        wallet.checkMoney(amount);
         wallet.withdrawal(amount);
 
         return UserWalletLog.builder()

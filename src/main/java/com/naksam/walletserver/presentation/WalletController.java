@@ -1,9 +1,6 @@
 package com.naksam.walletserver.presentation;
 
-import com.naksam.walletserver.dto.DepositToMe;
-import com.naksam.walletserver.dto.Exchange;
-import com.naksam.walletserver.dto.WalletHistory;
-import com.naksam.walletserver.dto.WalletInfo;
+import com.naksam.walletserver.dto.*;
 import com.naksam.walletserver.service.WalletService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -63,4 +60,12 @@ public class WalletController {
         return ResponseEntity.ok()
                 .build();
     }
+
+    @PostMapping("/club/{clubId}/payment")
+    public ResponseEntity<?> payment(@PathVariable Long clubId, @RequestBody Payment payment, HttpServletRequest req) {
+        walletService.payment(clubId, payment, req);
+        return ResponseEntity.ok()
+                .build();
+    }
+
 }
