@@ -138,7 +138,14 @@ public class Club extends BaseTimeEntity {
         return dues;
     }
 
-    public void payment(Payment payment) {
+    public ClubWalletLog payment(Payment payment) {
         wallet.withdrawal(payment.getMoney());
+        return ClubWalletLog.builder()
+                .club(this)
+                .detail(Detail.WITHDRAWAL)
+                .amount(Money.wons(payment.getMoney()))
+                .targetName(payment.getStoreName())
+                .targetId(null)
+                .build();
     }
 }

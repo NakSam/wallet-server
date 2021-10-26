@@ -133,6 +133,7 @@ public class WalletDomain {
         clubUserRepository.findByClubAndUser(club, user)
                 .orElseThrow(() -> new RuntimeException("클럽에 가입된 회원이 아닙니다"));
 
-        club.payment(payment);
+        ClubWalletLog clubWalletLog = club.payment(payment);
+        clubWalletLogRepository.save(clubWalletLog);
     }
 }
