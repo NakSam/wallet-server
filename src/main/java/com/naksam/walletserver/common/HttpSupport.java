@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 public class HttpSupport {
     public static  String getToken(HttpServletRequest req, String name) {
-        return getAuthorizationToken(req).orElse(getCookie(req, name).get().getValue());
+        return getAuthorizationToken(req).get();
     }
 
     public static Optional<Cookie> getCookie(HttpServletRequest req, String name) {
