@@ -104,19 +104,23 @@ public class Club extends BaseTimeEntity {
     }
 
     private Double calculateRate(List<ClubWalletLog> undistributedLogOfClub, Long userId) {
-        long sum = undistributedLogOfClub.stream()
+        long total = undistributedLogOfClub.stream()
+                .mapToLong(clubWalletLog -> clubWalletLog.amount()
+                        .longValue())
+                .sum();
+
+        long userTotal = undistributedLogOfClub.stream()
                 .filter(clubWalletLog -> clubWalletLog.targetId()
                         .equals(userId))
                 .mapToLong(clubWalletLog -> clubWalletLog.amount()
                         .longValue())
                 .sum();
 
-        if (sum == 0) {
+        if (userTotal == 0) {
             return 0D;
         }
 
-        return wallet.amount()
-                .ratio(sum);
+        return Money.wons(total).ratio(userTotal);
     }
 
     private Money moneyWithPayback(Money divided) {
