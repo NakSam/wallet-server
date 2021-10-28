@@ -3,8 +3,46 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="fix: 버그 수정" />
+    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="fix: 버그 수정">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,9 +84,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../user-server" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -125,7 +165,7 @@
       <workItem from="1634985948730" duration="9871000" />
       <workItem from="1635130127942" duration="4968000" />
       <workItem from="1635222268310" duration="2524000" />
-      <workItem from="1635386473175" duration="869000" />
+      <workItem from="1635386473175" duration="3482000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 기본 설정 구현">
       <created>1634794377702</created>
@@ -260,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635387338706</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fix: 버그 수정">
+      <created>1635387429361</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1635387429361</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,5 +357,47 @@
     <MESSAGE value="feat: 클럽 지갑으로 결제" />
     <MESSAGE value="fix: 버그 수정" />
     <option name="LAST_COMMIT_MESSAGE" value="fix: 버그 수정" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1635395033400">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1635395033400" />
+    <state width="1879" height="427" key="GridCell.Tab.0.bottom" timestamp="1635387407719">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="427" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407719" />
+    <state width="1879" height="427" key="GridCell.Tab.0.center" timestamp="1635387407719">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="427" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407719" />
+    <state width="1879" height="427" key="GridCell.Tab.0.left" timestamp="1635387407719">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="427" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407719" />
+    <state width="1879" height="427" key="GridCell.Tab.0.right" timestamp="1635387407719">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="427" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407719" />
+    <state width="1879" height="427" key="GridCell.Tab.1.bottom" timestamp="1635387407720">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="427" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407720" />
+    <state width="1879" height="427" key="GridCell.Tab.1.center" timestamp="1635387407719">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="427" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407719" />
+    <state width="1879" height="427" key="GridCell.Tab.1.left" timestamp="1635387407719">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="427" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407719" />
+    <state width="1879" height="427" key="GridCell.Tab.1.right" timestamp="1635387407720">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="427" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407720" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1635387342881">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1635387342881" />
   </component>
 </project>
