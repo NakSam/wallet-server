@@ -48,7 +48,7 @@ public class Money implements Serializable {
     }
 
     public Money divide(double divisor) {
-        return new Money(amount.divide(BigDecimal.valueOf(divisor)));
+        return new Money(amount.divide(BigDecimal.valueOf(divisor), RoundingMode.CEILING));
     }
 
     public Money ceiling() {
