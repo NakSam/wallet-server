@@ -71,8 +71,10 @@ public class Club extends BaseTimeEntity {
         List<ClubWalletLog> clubWalletLogs = new ArrayList<>();
         List<UserWalletLog> userWalletLogs = new ArrayList<>();
 
+        long total = wallet.amount().longValue();
+
         users.forEach(user -> {
-            Money divided = calculateDivided(user.id(), undistributedLogOfClub);
+            Money divided = calculateDivided(user.id(), undistributedLogOfClub, total);
             Money amountWithPayback = moneyWithPayback(divided);
             System.out.println(user.id() + " : " + amountWithPayback.longValue());
             userWalletLogs.add(user.deposit(amountWithPayback));
@@ -92,15 +94,17 @@ public class Club extends BaseTimeEntity {
         }
     }
 
-    private Money calculateDivided(Long id, List<ClubWalletLog> undistributedLogOfClub) {
+    private Money calculateDivided(Long id, List<ClubWalletLog> undistributedLogOfClub, long total) {
         Double rate = calculateRate(undistributedLogOfClub, id);
+
+        System.out.println(id + " : rate : " + rate);
 
         if (rate == 0) {
             return Money.wons(0);
         }
 
-        return wallet.amount()
-                .divide(rate);
+        return Money.wons(total)
+                .times(rate);
     }
 
     private Double calculateRate(List<ClubWalletLog> undistributedLogOfClub, Long userId) {
@@ -109,18 +113,23 @@ public class Club extends BaseTimeEntity {
                         .longValue())
                 .sum();
 
-        long userTotal = undistributedLogOfClub.stream()
+        long sum = undistributedLogOfClub.stream()
                 .filter(clubWalletLog -> clubWalletLog.targetId()
                         .equals(userId))
                 .mapToLong(clubWalletLog -> clubWalletLog.amount()
                         .longValue())
                 .sum();
 
-        if (userTotal == 0) {
+        System.out.println(userId + " : " + sum);
+
+        if (sum == 0) {
             return 0D;
         }
 
-        return Money.wons(total).ratio(userTotal);
+        return (double) (sum / (double)total);
+
+//        return wallet.amount()
+//                .ratio(sum);
     }
 
     private Money moneyWithPayback(Money divided) {
