@@ -76,7 +76,7 @@ public class Money implements Serializable {
     }
 
     public Double ratio(long divisor) {
-        return amount.divide(BigDecimal.valueOf(divisor))
+        return amount.divide(BigDecimal.valueOf(divisor), RoundingMode.CEILING)
                 .doubleValue();
     }
 
