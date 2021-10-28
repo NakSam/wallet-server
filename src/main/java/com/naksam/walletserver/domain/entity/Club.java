@@ -84,6 +84,8 @@ public class Club extends BaseTimeEntity {
     }
 
     private void checkMaster(User master) {
+        System.out.println("master.id() = " + master.id());
+        System.out.println("clubMaster.id() = " + clubMaster.id());
         if (!clubMaster.equals(master)) {
             throw new RuntimeException("권한이 없습니다");
         }

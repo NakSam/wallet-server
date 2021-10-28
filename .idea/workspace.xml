@@ -39,9 +39,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="fix: 결제시 로그 저장">
+    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="fix: 토큰">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/WalletDomain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/common/HttpSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/common/HttpSupport.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635387429361</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fix: 토큰">
+      <created>1635420769874</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1635420769874</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,48 +363,7 @@
     <MESSAGE value="fix: 클럽 중복 가입 제거" />
     <MESSAGE value="feat: 클럽 지갑으로 결제" />
     <MESSAGE value="fix: 버그 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 버그 수정" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1635395033400">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1635395033400" />
-    <state width="1879" height="427" key="GridCell.Tab.0.bottom" timestamp="1635387407719">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1879" height="427" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407719" />
-    <state width="1879" height="427" key="GridCell.Tab.0.center" timestamp="1635387407719">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1879" height="427" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407719" />
-    <state width="1879" height="427" key="GridCell.Tab.0.left" timestamp="1635387407719">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1879" height="427" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407719" />
-    <state width="1879" height="427" key="GridCell.Tab.0.right" timestamp="1635387407719">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1879" height="427" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407719" />
-    <state width="1879" height="427" key="GridCell.Tab.1.bottom" timestamp="1635387407720">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1879" height="427" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407720" />
-    <state width="1879" height="427" key="GridCell.Tab.1.center" timestamp="1635387407719">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1879" height="427" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407719" />
-    <state width="1879" height="427" key="GridCell.Tab.1.left" timestamp="1635387407719">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1879" height="427" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407719" />
-    <state width="1879" height="427" key="GridCell.Tab.1.right" timestamp="1635387407720">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1879" height="427" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1635387407720" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1635387342881">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1635387342881" />
+    <MESSAGE value="fix: 토큰" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 토큰" />
   </component>
 </project>
