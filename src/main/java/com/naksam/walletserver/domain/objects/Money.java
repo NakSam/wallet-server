@@ -48,11 +48,11 @@ public class Money implements Serializable {
     }
 
     public Money divide(double divisor) {
-        return new Money(amount.divide(BigDecimal.valueOf(divisor), RoundingMode.CEILING));
+        return new Money(amount.divide(BigDecimal.valueOf(divisor), RoundingMode.FLOOR));
     }
 
     public Money ceiling() {
-        return new Money(amount.setScale(0, RoundingMode.CEILING));
+        return new Money(amount.setScale(0, RoundingMode.FLOOR));
     }
 
     public boolean isLessThan(Money other) {

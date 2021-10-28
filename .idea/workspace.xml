@@ -39,11 +39,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="fix: 토큰">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/common/HttpSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/common/HttpSupport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/query/UserQueryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/query/UserQueryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" afterDir="false" />
+    <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="fix: 버그픽스">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/objects/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/objects/Money.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +320,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635422068181</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fix: 버그픽스">
+      <created>1635426356957</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1635426356957</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fix: 버그픽스">
+      <created>1635426627046</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1635426627046</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,6 +384,7 @@
     <MESSAGE value="feat: 클럽 지갑으로 결제" />
     <MESSAGE value="fix: 버그 수정" />
     <MESSAGE value="fix: 토큰" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 토큰" />
+    <MESSAGE value="fix: 버그픽스" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 버그픽스" />
   </component>
 </project>
