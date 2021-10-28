@@ -25,12 +25,12 @@ public class WalletDomain {
     private final UserQueryRepository userQueryRepository;
 
     public WalletInfo findMyWalletInfo(MemberPayload memberPayload) {
-        return userRepository.findById(1L)
-                .orElseThrow(() -> new RuntimeException("등록된 사용자가 없습니다."))
-                .walletInfo();
-//        return userRepository.findById(memberPayload.getId())
+//        return userRepository.findById(1L)
 //                .orElseThrow(() -> new RuntimeException("등록된 사용자가 없습니다."))
 //                .walletInfo();
+        return userRepository.findById(memberPayload.getId())
+                .orElseThrow(() -> new RuntimeException("등록된 사용자가 없습니다."))
+                .walletInfo();
     }
 
     public void depositToClub(MemberPayload memberPayload, Long clubId) {
