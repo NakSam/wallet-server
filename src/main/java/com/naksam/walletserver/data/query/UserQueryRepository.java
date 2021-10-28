@@ -20,7 +20,7 @@ public class UserQueryRepository {
                 .join(clubUser)
                 .on(
                         user.eq(clubUser.user),
-                        clubUser.id.eq(clubId)
+                        clubUser.club.id.eq(clubId)
                 )
                 .fetch();
     }

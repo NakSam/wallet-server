@@ -42,6 +42,8 @@
     <list default="true" id="b1080c93-2054-4827-86cc-f1ddf6f633af" name="Changes" comment="fix: 토큰">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/common/HttpSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/common/HttpSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/query/UserQueryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/data/query/UserQueryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/naksam/walletserver/domain/entity/Club.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635420769874</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fix: 토큰">
+      <created>1635422068181</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1635422068181</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
