@@ -77,7 +77,7 @@ public class Club extends BaseTimeEntity {
             Money divided = calculateDivided(user.id(), undistributedLogOfClub, total);
             Money amountWithPayback = moneyWithPayback(divided);
             System.out.println(user.id() + " : " + amountWithPayback.longValue());
-            userWalletLogs.add(user.deposit(amountWithPayback));
+            userWalletLogs.add(user.deposit(amountWithPayback, name.toString()));
             clubWalletLogs.add(withdrawal(divided.longValue(), user));
         });
 

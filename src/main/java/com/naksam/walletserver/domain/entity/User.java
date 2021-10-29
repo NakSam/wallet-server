@@ -46,6 +46,16 @@ public class User extends BaseTimeEntity {
         return this.deposit(amount.longValue());
     }
 
+    public UserWalletLog deposit(Money amount, String clubName) {
+        wallet.deposit(amount.longValue());
+        return UserWalletLog.builder()
+                .user(this)
+                .detail(Detail.DEPOSIT)
+                .amount(amount)
+                .targetName(clubName)
+                .build();
+    }
+
     public UserWalletLog deposit(Long amount) {
         wallet.deposit(amount);
         return UserWalletLog.builder()
